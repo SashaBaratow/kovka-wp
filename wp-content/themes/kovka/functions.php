@@ -252,7 +252,7 @@ function theme_cases_posttype_register()
     $services_post_args = array(
         'labels' => $services_post_labels,
         'public' => true,
-        'supports' => ['title'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+        'supports' => ['title', 'thumbnail'], // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
         'hierarchical' => false,
         'publicly_queryable' => true,
         'show_in_nav_menus' => false,

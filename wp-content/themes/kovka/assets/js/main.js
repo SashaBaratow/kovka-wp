@@ -58,7 +58,6 @@ if (window.screen.width < 768){
     $('.top-right-menu .social-icons').removeClass('text-right')
 }
 
-
 //cases - list
 
 var galleryTop = new Swiper('.gallery-top', {
@@ -86,13 +85,45 @@ galleryThumbs.controller.control = galleryTop;
 
 // reviews
 
-var swiper = new Swiper(".revSwiper", {
-    slidesPerView: 2,
-    spaceBetween: 30,
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
+// var swiper = new Swiper(".revSwiper", {
+//     slidesPerView: 2,
+//     spaceBetween: 30,
+//     navigation: {
+//         nextEl: ".swiper-button-next",
+//         prevEl: ".swiper-button-prev",
+//     },
+// });
+$('.revSlider').slick({
+    dots: false,
+    infinite: true,
+    speed: 800,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
 });
 
 // partners

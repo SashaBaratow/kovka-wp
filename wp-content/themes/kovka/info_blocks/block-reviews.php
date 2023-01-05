@@ -57,109 +57,208 @@ foreach ($block_list as $list) {
         padding-bottom: <?= $padding_bottom?>rem;
         margin-top: <?= $margin_top?>rem;
         margin-bottom: <?= $margin_bottom;?>rem;
+        min-height: 400px;
     }
-    <? if ($block_background_image != '') { ?><? if ($block_dark_overlay) { ?>
-    #
-    <?= $block_id; ?>:before {
-        content: '';
+    #<?= $block_id; ?> .revSlider .slick-prev{
         position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background: #000;
-        opacity: 0.7;
-        z-index: -1;
+        left: -75%;
+        bottom: -70px;
+        top: unset;
+        display: inline-block !important;
+        opacity: 1 !important;
     }
-
-    <? } ?>
-    #
-    <?= $block_id; ?>:after {
-        content: '';
+    #<?= $block_id; ?> .revSlider .slick-next{
         position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        background-image: url(<?= $block_background_image; ?>);
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        z-index: -2;
+        left: -68%;
+        bottom: -70px;
+        top: unset;
+        opacity: 1 !important;
     }
+    @media(max-width: 1700px){
+        #<?= $block_id; ?> .revSlider .slick-prev{
+            left: -78%;
+        }
+        #<?= $block_id; ?> .revSlider .slick-next{
+             left: -71%;
+        }
+    }
+    @media(max-width: 1500px){
+        #<?= $block_id; ?> .revSlider .slick-prev{
+            left: -61%;
+            bottom: -40px;
+        }
+        #<?= $block_id; ?> .revSlider .slick-next{
+            left: -52%;
+            bottom: -40px;
+        }
+        #<?= $block_id; ?> .left{
+        /*    max-width: 40% !important;*/
+        /*}*/
+        /* #*/<?//= $block_id; ?>/* .right{*/
+        /*    max-width: 60% !important;*/
+        /* }*/
+    }
+    @media(max-width: 1500px){
+        #<?= $block_id; ?> .revSlider .slick-prev{
+            left: -61%;
+            bottom: -40px;
+        }
+         #<?= $block_id; ?> .revSlider .slick-next{
+             left: -52%;
+             bottom: -40px;
+         }
 
-    @media only screen and (min-width: 768px) {
-    #<?= $block_id; ?>:after {
-        background-attachment: fixed;
-    }
-    }
 
-    @media only screen and (max-width: 767px) {
-    #<?= $block_id; ?>:after {
-        <?php if ($block_background_image_mobile != "") { ?> background-image: url(<?= $block_background_image_mobile; ?>);
-    <?php } ?>
-    }
-    }
-
-    <? } ?>
 </style>
-<section class="reviews" style="padding: 40px 0;">
-    <div class="container">
-        <div class="d-flex reviews__wrap-head">
-            <h2 class="section-title" <?= $block_title_underline ? "style='text-decoration: underline;'" : '' ?> > <?= !empty($block_title) ? $block_title : '' ?> </h2>
-            <div class="dots-container"></div>
-        </div>
+<!--<section class="reviews" style="padding: 40px 0;">-->
+<!--    <div class="container">-->
+<!--        <div class="d-flex reviews__wrap-head">-->
+<!--            <h2 class="section-title" --><?//= $block_title_underline ? "style='text-decoration: underline;'" : '' ?><!-- > --><?//= !empty($block_title) ? $block_title : '' ?><!-- </h2>-->
+<!--            <div class="dots-container"></div>-->
+<!--        </div>-->
+<!--        <div class="reviews-wrap">-->
+<!--            <div class="reviews__list">-->
+<!--                --><?php //foreach ($block_list_item as $block_list_item_data): ?>
+<!--                --><?php //$counter = 1;?>
+<!--                    <div>-->
+<!--                        <div class="reviews__item d-flex">-->
+<!---->
+<!--                            <div class="reviews__img-block">-->
+<!--                                <a href="--><?//= $block_list_item_data['review_scan'] ?><!--" data-fancybox >-->
+<!--                                    <img src="--><?//= $block_list_item_data['review_image'] ?><!--" alt="Чиать отзыв: --><?//= $block_list_item_data['review_name']; ?><!-- - --><?//= $block_list_item_data['review_work']; ?><!--" title="Читать отзыв о компании CNS: --><?//= $block_list_item_data['review_name']; ?><!-- - --><?//= $block_list_item_data['review_work']; ?><!--">-->
+<!--                                </a>-->
+<!--                            </div>-->
+<!--                            <div  id="dialog-content--><?//= $counter;?><!--" style="display:none;">-->
+<!--                                <img src="--><?//= $block_list_item_data['review_scan'] ?><!--" alt="Отзыв: --><?//= $block_list_item_data['review_name']; ?><!-- - --><?//= $block_list_item_data['review_work']; ?><!--" title="Отзыв о компании CNS: --><?//= $block_list_item_data['review_name']; ?><!-- - --><?//= $block_list_item_data['review_work']; ?><!--">-->
+<!--                            </div>-->
+<!--                            <div class="reviews__content">-->
+<!--                                <div class="reviews__item-head d-flex">-->
+<!--                                    <img src="--><?//= $block_list_item_data['review_logo'] ?><!--" alt="">-->
+<!--                                    <div class="reviews__user">-->
+<!--                                        <h3 class="reviews__item-title">--><?//= $block_list_item_data['review_name']; ?><!--</h3>-->
+<!--                                        --><?php //if (!empty($block_list_item_data['review_work'])): ?>
+<!--                                            <span>--><?//= $block_list_item_data['review_work']; ?><!-- </span>-->
+<!--                                        --><?php //endif; ?>
+<!--                                    </div>-->
+<!--                                    <div class="stars">-->
+<!--                                        --><?//= $block_list_item_data['review_rang']; ?>
+<!--                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"-->
+<!--                                             xmlns="http://www.w3.org/2000/svg">-->
+<!--                                            <path d="M18.3337 8.41678C18.417 8.00011 18.0837 7.50011 17.667 7.50011L12.917 6.83344L10.7503 2.50011C10.667 2.33344 10.5837 2.25011 10.417 2.16678C10.0003 1.91678 9.50033 2.08344 9.25033 2.50011L7.16699 6.83344L2.41699 7.50011C2.16699 7.50011 2.00033 7.58345 1.91699 7.75011C1.58366 8.08345 1.58366 8.58344 1.91699 8.91678L5.33366 12.2501L4.50033 17.0001C4.50033 17.1668 4.50033 17.3334 4.58366 17.5001C4.83366 17.9168 5.33366 18.0834 5.75033 17.8334L10.0003 15.5834L14.2503 17.8334C14.3337 17.9168 14.5003 17.9168 14.667 17.9168C14.7503 17.9168 14.7503 17.9168 14.8337 17.9168C15.2503 17.8334 15.5837 17.4168 15.5003 16.9168L14.667 12.1668L18.0837 8.83344C18.2503 8.75011 18.3337 8.58345 18.3337 8.41678Z"-->
+<!--                                                  fill="#E31B08"/>-->
+<!--                                        </svg>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="reviews__text">-->
+<!--                                    --><?//= mb_strimwidth($block_list_item_data['review_review'], 0, 581, '...'); ?>
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <a href="--><?//= $block_list_item_data['review_scan'] ?><!--" data-fancybox class="btn text-btn dark-text">-->
+<!--                            --><?//= $block_list_item_data['review_link_title'] ?>
+<!--                        </a>-->
+<!--                        <!-- <a href="" data-fancybox data-src="#dialog-content--><?//= $counter;?><!--" class="btn text-btn dark-text">-->
+<!--                            --><?//= $block_list_item_data['review_link_title'] ?>
+<!--                        </a> -->-->
+<!--                    </div>-->
+<!--                    --><?php //$counter++;?>
+<!--                --><?php //endforeach; ?>
+<!--            </div>-->
+<!--            <div class="slide-btn-wrap"></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 
-        <div class="reviews-wrap">
-
-            <div class="reviews__list">
-                <?php foreach ($block_list_item as $block_list_item_data): ?>
-                <?php $counter = 1;?>
-                    <div>
-                        <div class="reviews__item d-flex">
-
-                            <div class="reviews__img-block">
-                                <a href="<?= $block_list_item_data['review_scan'] ?>" data-fancybox >
-                                    <img src="<?= $block_list_item_data['review_image'] ?>" alt="Чиать отзыв: <?= $block_list_item_data['review_name']; ?> - <?= $block_list_item_data['review_work']; ?>" title="Читать отзыв о компании CNS: <?= $block_list_item_data['review_name']; ?> - <?= $block_list_item_data['review_work']; ?>">
-                                </a>
-                            </div>
-                            <div  id="dialog-content<?= $counter;?>" style="display:none;">
-                                <img src="<?= $block_list_item_data['review_scan'] ?>" alt="Отзыв: <?= $block_list_item_data['review_name']; ?> - <?= $block_list_item_data['review_work']; ?>" title="Отзыв о компании CNS: <?= $block_list_item_data['review_name']; ?> - <?= $block_list_item_data['review_work']; ?>">
-                            </div>
-                            <div class="reviews__content">
-                                <div class="reviews__item-head d-flex">
-                                    <img src="<?= $block_list_item_data['review_logo'] ?>" alt="">
-                                    <div class="reviews__user">
-                                        <h3 class="reviews__item-title"><?= $block_list_item_data['review_name']; ?></h3>
-                                        <?php if (!empty($block_list_item_data['review_work'])): ?>
-                                            <span><?= $block_list_item_data['review_work']; ?> </span>
-                                        <?php endif; ?>
-                                    </div>
-                                    <div class="stars">
-                                        <?= $block_list_item_data['review_rang']; ?>
-                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                             xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M18.3337 8.41678C18.417 8.00011 18.0837 7.50011 17.667 7.50011L12.917 6.83344L10.7503 2.50011C10.667 2.33344 10.5837 2.25011 10.417 2.16678C10.0003 1.91678 9.50033 2.08344 9.25033 2.50011L7.16699 6.83344L2.41699 7.50011C2.16699 7.50011 2.00033 7.58345 1.91699 7.75011C1.58366 8.08345 1.58366 8.58344 1.91699 8.91678L5.33366 12.2501L4.50033 17.0001C4.50033 17.1668 4.50033 17.3334 4.58366 17.5001C4.83366 17.9168 5.33366 18.0834 5.75033 17.8334L10.0003 15.5834L14.2503 17.8334C14.3337 17.9168 14.5003 17.9168 14.667 17.9168C14.7503 17.9168 14.7503 17.9168 14.8337 17.9168C15.2503 17.8334 15.5837 17.4168 15.5003 16.9168L14.667 12.1668L18.0837 8.83344C18.2503 8.75011 18.3337 8.58345 18.3337 8.41678Z"
-                                                  fill="#E31B08"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                                <div class="reviews__text">
-                                    <?= mb_strimwidth($block_list_item_data['review_review'], 0, 581, '...'); ?>
-                                </div>
+<section class="review" id="<?= $block_id; ?>">
+    <div class="container-fluid">
+        <div class="row flex-md-column flex-lg-row">
+            <div class="left col-md-12 col-lg-6">
+                <div class="info">
+                    <h3>What a happy client say?</h3>
+                    <hr>
+                    <p>Studio practice focused on modern design, landscapes from our inception.</p>
+                </div>
+            </div>
+            <div class="right col-md-12 col-lg-6">
+                <!-- Swiper -->
+                <div class="revSlider  slick-slider">
+                    <div class="slide">
+                            <h5>Malina Alex </h5>
+                            <p>Studio practice focused on modern design,
+                                interiors and landscapes.
+                                From our inception in 2007,
+                                we have used on mode livered.
+                            </p>
+                            <div class="stars">
+                                <i class="icofont-star active"></i>
+                                <i class="icofont-star active"></i>
+                                <i class="icofont-star active"></i>
+                                <i class="icofont-star active"></i>
+                                <i class="icofont-star active"></i>
                             </div>
                         </div>
-                        <a href="<?= $block_list_item_data['review_scan'] ?>" data-fancybox class="btn text-btn dark-text">
-                            <?= $block_list_item_data['review_link_title'] ?>
-                        </a>
-                        <!-- <a href="" data-fancybox data-src="#dialog-content<?= $counter;?>" class="btn text-btn dark-text">
-                            <?= $block_list_item_data['review_link_title'] ?>
-                        </a> -->
-                    </div>
-                    <?php $counter++;?>
-                <?php endforeach; ?>
+                    <div class="slide">
+                            <h5>Malina Alex </h5>
+                            <p>Studio practice focused on modern design,
+                                interiors and landscapes.
+                                From our inception in 2007,
+                                we have used on mode livered.
+                            </p>
+                            <div class="stars">
+                                <i class="icofont-star active"></i>
+                                <i class="icofont-star active"></i>
+                                <i class="icofont-star active"></i>
+                                <i class="icofont-star active"></i>
+                                <i class="icofont-star active"></i>
+                            </div>
+                        </div>
+                    <div class="slide">
+                            <h5>Malina Alex </h5>
+                            <p>Studio practice focused on modern design,
+                                interiors and landscapes.
+                                From our inception in 2007,
+                                we have used on mode livered.
+                            </p>
+                            <div class="stars">
+                                <i class="icofont-star active"></i>
+                                <i class="icofont-star active"></i>
+                                <i class="icofont-star active"></i>
+                                <i class="icofont-star active"></i>
+                                <i class="icofont-star active"></i>
+                            </div>
+                        </div>
+                    <div class="slide">
+                            <h5>Malina Alex </h5>
+                            <p>Studio practice focused on modern design,
+                                interiors and landscapes.
+                                From our inception in 2007,
+                                we have used on mode livered.
+                            </p>
+                            <div class="stars">
+                                <i class="icofont-star active"></i>
+                                <i class="icofont-star active"></i>
+                                <i class="icofont-star active"></i>
+                                <i class="icofont-star active"></i>
+                                <i class="icofont-star active"></i>
+                            </div>
+                        </div>
+                    <div class="slide">
+                            <h5>Malina Alex </h5>
+                            <p>Studio practice focused on modern design,
+                                interiors and landscapes.
+                                From our inception in 2007,
+                                we have used on mode livered.
+                            </p>
+                            <div class="stars">
+                                <i class="icofont-star active"></i>
+                                <i class="icofont-star active"></i>
+                                <i class="icofont-star active"></i>
+                                <i class="icofont-star active"></i>
+                                <i class="icofont-star active"></i>
+                            </div>
+                        </div>
+                </div>
             </div>
-            <div class="slide-btn-wrap"></div>
         </div>
     </div>
 </section>
