@@ -8,159 +8,96 @@ $callback_fixed = get_field('callback_fixed_title_subtitle', 'option');
 $popup_form = get_field('popup_title_subtitle', 'option');
 
 $footer_logo = get_field('footer_logo_cns', 'option');
+$footer_text = get_field('footer_text', 'option');
+$footer_social_net = get_field('footer_social_net', 'option');
 $header_contacts = get_field('header_phones', 'option');
 $header_phone_link = preg_replace('/[^0-9]/', '', $header_contacts['phone']);
 ?>
 
 <footer>
     <div class="witrfm_area">
-        <div class="footer-middle" style="background-image: url('<?php get_template_directory_uri()?>/assets/img/footer-bg-img-1.jpg')">
+        <div class="footer-middle" style="background-image: url('<?= get_template_directory_uri()?>/assets/img/footer-bg-img-1.jpg')">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-md-6  col-lg-4">
                         <div id="twr_description_widget-1" class="widget widget_twr_description_widget">
-                            <div class="akin-description-area"><a href="https://demo.themexbd.com/rtl/akin/"><img
-                                            decoding="async"
-                                            src="https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_<?php get_template_directory_uri()?>/assets/img/https://demo.themexbd.com/rtl/akin/wp-content/uploads/2021/09/logo.png"
-                                            alt="Footer logo" class="logo"></a>
-                                <p>Studio practice focused on modern esign, interiors and landscapes. From our eption.
-                                    Studio practice focused</p>
+                            <div class="akin-description-area">
+                                <a href="https://demo.themexbd.com/rtl/akin/">
+                                    <img decoding="async" src="<?=$footer_logo?>" alt="Footer logo" class="logo">
+                                </a>
+                                <p> <?= $footer_text ?> </p>
                                 <p class="phone"><a href="tel:"> </a></p>
-                                <div class="social-icons"><a class="facebook" href="#" title="Facebook"><i
-                                                class="icofont-facebook"></i></a> <a class="twitter" href="#" title="Twitter"><i
-                                                class="icofont-twitter"></i></a> <a class="rss" href="#" title="RSS"><i
-                                                class="icofont-rss"></i></a> <a class="Pinterest" href="#" title="Pinterest"><i
-                                                class="icofont-pinterest"></i></a></div>
+                                <div class="social-icons">
+                                    <?php foreach ($footer_social_net as $item): ?>
+                                    <a class="facebook" href="<?= $item['footer_social_net_link'] ?>" >
+                                        <img src="<?= $item['footer_social_net_icon'] ?>" alt="">
+                                    </a>
+                                    <?php endforeach; ?>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6  col-lg-4">
-                        <div id="nav_menu-2" class="widget widget_nav_menu"><h2 class="widget-title">Our Service</h2>
+                        <div id="nav_menu-2" class="widget widget_nav_menu">
+                            <h2 class="widget-title" > Сервис </h2>
+                            <?php
+                            wp_nav_menu(array(
+                                'theme_location'    => 'footer-service',
+                                'depth'             => 3,
+                                'container'         => false,
+                                'menu_class'      => 'header__nav-list visible-links',
+                                'container_id'      => 'header-main-menu',
+                                'fallback_cb'       => 'WP_Bootstrap_Navwalker',
+                                'walker'            => new WP_Bootstrap_Navwalker(),
+                                'items_wrap' => '<ul class="%2$s" itemprop="about" itemscope itemtype="http://schema.org/ItemList">%3$s</ul>'
+                            ));
+                            ?>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6  col-lg-4">
-                        <div id="about_us-widget-2" class="widget about_us"><h2 class="widget-title">Contact Us</h2>
+                        <div id="about_us-widget-2" class="widget about_us"><h2 class="widget-title">Контакты</h2>
                             <div class="about-footer">
                                 <div class="footer-widget address">
                                     <div class="footer-logo"></div>
                                     <div class="footer-address">
                                         <div class="footer_s_inner">
-                                            <div class="footer-sociala-icon"><i class="icofont-google-map"></i></div>
-                                            <div class="footer-sociala-info"><p>2334 Peterson Street Kingston USA</p>
+                                            <div class="footer-sociala-icon">
+                                                <?php if(!empty($header_contacts['footer_address_icon'])): ?>
+                                                    <img src="<?= $header_contacts['footer_address_icon'] ?>" alt="">
+                                                <?php else: ?>
+                                                    <i class="icofont-google-map"></i>
+                                                <?php endif; ?>
+                                            </div>
+                                            <div class="footer-sociala-info">
+                                                <p><?= $header_contacts['address'] ?></p>
                                             </div>
                                         </div>
                                         <div class="footer_s_inner">
-                                            <div class="footer-sociala-icon"><i class="icofont-phone"></i></div>
-                                            <div class="footer-sociala-info"><p>+69 1123-2234-32</p></div>
+                                            <div class="footer-sociala-icon">
+                                                <?php if(!empty($header_contacts['footer_phone_icon'])): ?>
+                                                    <img src="<?= $header_contacts['footer_phone_icon'] ?>" alt="">
+                                                <?php else: ?>
+                                                    <i class="icofont-phone"></i>
+                                                <?php endif; ?>
+                                            </div>
+                                            <div class="footer-sociala-info">
+                                                <p><?= $header_contacts['phone'] ?></p>
+                                            </div>
                                         </div>
                                         <div class="footer_s_inner">
-                                            <div class="footer-sociala-icon"><i class="icofont-envelope-open"></i></div>
-                                            <div class="footer-sociala-info"><p>example@example.com</p></div>
+                                            <div class="footer-sociala-icon">
+                                                <?php if(!empty($header_contacts['footer_email_icon'])): ?>
+                                                    <img src="<?= $header_contacts['footer_email_icon'] ?>" alt="">
+                                                <?php else: ?>
+                                                    <i class="icofont-envelope-open"></i>
+                                                <?php endif; ?>
+                                            </div>
+                                            <div class="footer-sociala-info">
+                                                <p><?= $header_contacts['email'] ?></p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div id="mc4wp_form_widget-1" class="widget widget_mc4wp_form_widget">
-                            <script>(function () {
-                                    window.mc4wp = window.mc4wp || {
-                                        listeners: [],
-                                        forms: {
-                                            on: function (evt, cb) {
-                                                window.mc4wp.listeners.push(
-                                                    {
-                                                        event: evt,
-                                                        callback: cb
-                                                    }
-                                                );
-                                            }
-                                        }
-                                    }
-                                })();</script>
-                            <form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-5214" method="post" data-id="5214"
-                                  data-name="">
-                                <div class="mc4wp-form-fields">
-                                    <p><input type="email" name="EMAIL" placeholder="Enter your email" required="">
-                                        <button type="submit" value="Subscribe"><span>Send</span></button>
-                                    </p>
-                                </div>
-                                <label style="display: none !important;">Leave this field empty if you're human: <input
-                                            type="text" name="_mc4wp_honeypot" value="" tabindex="-1"
-                                            autocomplete="off"></label><input type="hidden" name="_mc4wp_timestamp"
-                                                                              value="1672221079"><input type="hidden"
-                                                                                                        name="_mc4wp_form_id"
-                                                                                                        value="5214"><input
-                                        type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1">
-                                <div class="mc4wp-response"></div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6  col-lg-d-none">
-                        <div id="calendar-3" class="widget widget_calendar">
-                            <div id="calendar_wrap" class="calendar_wrap">
-                                <table id="wp-calendar" class="wp-calendar-table">
-                                    <caption>December 2022</caption>
-                                    <thead>
-                                    <tr>
-                                        <th scope="col" title="Monday">M</th>
-                                        <th scope="col" title="Tuesday">T</th>
-                                        <th scope="col" title="Wednesday">W</th>
-                                        <th scope="col" title="Thursday">T</th>
-                                        <th scope="col" title="Friday">F</th>
-                                        <th scope="col" title="Saturday">S</th>
-                                        <th scope="col" title="Sunday">S</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td colspan="3" class="pad">&nbsp;</td>
-                                        <td>1</td>
-                                        <td>2</td>
-                                        <td>3</td>
-                                        <td>4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>6</td>
-                                        <td>7</td>
-                                        <td>8</td>
-                                        <td>9</td>
-                                        <td>10</td>
-                                        <td>11</td>
-                                    </tr>
-                                    <tr>
-                                        <td>12</td>
-                                        <td>13</td>
-                                        <td>14</td>
-                                        <td>15</td>
-                                        <td>16</td>
-                                        <td>17</td>
-                                        <td>18</td>
-                                    </tr>
-                                    <tr>
-                                        <td>19</td>
-                                        <td>20</td>
-                                        <td>21</td>
-                                        <td>22</td>
-                                        <td>23</td>
-                                        <td>24</td>
-                                        <td>25</td>
-                                    </tr>
-                                    <tr>
-                                        <td>26</td>
-                                        <td>27</td>
-                                        <td id="today">28</td>
-                                        <td>29</td>
-                                        <td>30</td>
-                                        <td>31</td>
-                                        <td class="pad" colspan="1">&nbsp;</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                                <nav aria-label="Previous and next months" class="wp-calendar-nav"><span
-                                            class="wp-calendar-nav-prev"><a
-                                                href="https://demo.themexbd.com/rtl/akin/2021/08/">« Aug</a></span> <span
-                                            class="pad">&nbsp;</span> <span class="wp-calendar-nav-next">&nbsp;</span></nav>
                             </div>
                         </div>
                     </div>
@@ -171,21 +108,21 @@ $header_phone_link = preg_replace('/[^0-9]/', '', $header_contacts['phone']);
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-6  col-sm-12">
-                        <div class="copy-right-text"><p> Copyright © akin all rights reserved.</p></div>
+                        <div class="copy-right-text"><p> <?= $footer_copyright ?> </p></div>
                     </div>
                     <div class="col-lg-6 col-md-6  col-sm-12">
                         <div class="footer-menu">
-                            <ul id="menu-footer-menu" class="text-right">
-                                <li id="menu-item-5554"
-                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5554"><a
-                                            href="https://demo.themexbd.com/rtl/akin/about/">About</a></li>
-                                <li id="menu-item-5555"
-                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5555"><a
-                                            href="https://demo.themexbd.com/rtl/akin/contact/">Contact</a></li>
-                                <li id="menu-item-5556"
-                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5556"><a
-                                            href="https://demo.themexbd.com/rtl/akin/service/">Service</a></li>
-                            </ul>
+                            <?php
+                            wp_nav_menu(array(
+                                'theme_location'    => 'footer',
+                                'depth'             => 3,
+                                'container'         => false,
+                                'menu_class'      => 'text-right',
+                                'fallback_cb'       => 'WP_Bootstrap_Navwalker',
+                                'walker'            => new WP_Bootstrap_Navwalker(),
+                                'items_wrap' => '<ul class="%2$s" itemprop="about" itemscope itemtype="http://schema.org/ItemList">%3$s</ul>'
+                            ));
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -193,6 +130,37 @@ $header_phone_link = preg_replace('/[^0-9]/', '', $header_contacts['phone']);
         </div>
     </div>
 </footer>
+
+<section class="pop-ups close ">
+    <div class="recall-popup close">
+        <div class="close"></div>
+        <h5> Обратный звонок </h5>
+        <span class="top-text">Оставьте заявку и наш специалист свяжется с вами!</span>
+        <form action="#">
+            <input type="text" placeholder="Ваше имя*">
+            <input type="text" placeholder="+7(___)___-__-__">
+            <button type="submit">Отправить</button>
+        </form>
+        <p>Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь c политикой
+            конфиденциальности</p>
+    </div>
+    <div class="recall-popup-question close ">
+        <div class="close"></div>
+        <h5> Консультация </h5>
+        <span class="top-text">Оставьте запрос и наши специалисты проконсультуруют вас!</span>
+        <form action="#">
+            <input type="text" name="name" placeholder="Ваше имя*">
+            <input type="text" name="phone" placeholder="+7(___)___-__-__">
+            <textarea name="message" id="" cols="30" rows="3" placeholder="Ваш вопрос*"></textarea>
+            <button type="submit">Отправить</button>
+        </form>
+        <p>Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь c политикой
+            конфиденциальности</p>
+    </div>
+</section>
+
+<!--old -->
+
 <div class="modal" id="popup-recall" tabindex="-1" aria-labelledby="back-callTitle" style="display: none;" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" style="max-width: 21.56rem;">
         <div class="modal-content">

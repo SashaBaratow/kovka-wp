@@ -17,19 +17,11 @@ $padding_bottom_map = $block_padding_bottom_map / 16;
 $margin_top_map = $block_margin_top_map / 16;
 $margin_bottom_map = $block_margin_bottom_map / 16;
 
-$block_background_enable = $post_info_block_fields["infoblock_background_enable"];
-
-$block_background_image = $post_info_block_fields["infoblock_background_image"];
-
-$block_background_image_mobile = $post_info_block_fields["infoblock_background_image_mobile"];
-
-$block_background_color = strtolower($post_info_block_fields["infoblock_background_color"]);
-$block_dark_overlay = $post_info_block_fields["infoblock_dark_overlay"];
-$block_white_foreground = $post_info_block_fields["infoblock_white_foreground"];
 $block_map = $post_info_block_fields["map_new"];
 
 $block_map_phone = $option_phone ?? '';
-
+//
+//var_dump($block_map);
 ?>
 
 
@@ -53,62 +45,10 @@ $block_map_phone = $option_phone ?? '';
             margin-bottom:<?= $margin_bottom_map;?>rem;
         }
     </style>
-    <div class="container">
+
         <div id="<?= $block_id; ?>-map" class="map-block">
         </div>
-        <div class="map__info-wrap">
-            <div class="map__info">
-                <h2><?= $block_title?></h2>
-                <ul>
-                    <?php
-                    if (!empty($block_map['map_elements'])):
-                        foreach ($block_map['map_elements'] as $element => $block_map_element_item):
-                            if(empty($block_map_element_item['map_link'])) : ?>
-                            <li>
-                                <img src="<?= $block_map_element_item['map_icon']?>" alt="<?= $block_map_element_item['map_text']?>">
-                                <span><?= $block_map_element_item['map_text']?></span>
-                            </li>
-                            <?php elseif(!empty($block_map_element_item['map_link'])): ?>
-                            <li>
-                                <img src="<?= $block_map_element_item['map_icon']?>" alt="<?= $block_map_element_item['map_text']?>">
-                                <a href="<?= $block_map_element_item['map_link'] ?>" ><?= $block_map_element_item['map_text']?></a>
-                            </li>
-                        <?php endif; endforeach; endif;?>
-                </ul>
-                <p><?= $block_map['text_over_map_btn']?></p>
-                <?php if ($block_map['cns_btns_map'] ):?>
-                    <?php foreach($block_map['cns_btns_map'] as $header_btns_cns_items => $header_btns_cns_item) { ?>
-                        <a href="<?= $header_btns_cns_item['case_btn_link_cns']?>" class="<?php
-                        switch ($header_btns_cns_item['case_btn_type_cns']) {
-                            case 'link':
-                                echo "link";
-                                break;
-                            case 'colored':
-                                echo " btn";
-                                break;
-                            case 'bordered':
-                                echo " btn outline-btn";
-                                break;
-                        }
-                        switch ($header_btns_cns_item['case_btn_color_cns']) {
-                            case 'red':
-                                echo " red-btn";
-                                break;
-                            case 'blue':
-                                echo " hell-blue-btn";
-                                break;
-                            case 'dark_blue':
-                                echo " blue-btn";
-                                break;
-                        }
-                        ?> ">
-                            <?=$header_btns_cns_item['case_btn_name_cns'];?>
-                        </a>
-                    <?php } ?>
-                <?php endif;?>
-            </div>
-        </div>
-    </div>
+
 </section>
 
 <script>
@@ -139,7 +79,7 @@ $block_map_phone = $option_phone ?? '';
 
             center: [<?= $block_map['map_new_shirota']; ?>, <?= $block_map['map_new_dolgota']; ?>], // Москва
 
-            zoom: 8,
+            zoom: 13,
 
             controls: []
 

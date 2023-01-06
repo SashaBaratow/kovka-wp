@@ -56,6 +56,7 @@ function theme_add_scripts_and_styles()
 add_action('wp_enqueue_scripts', 'theme_add_scripts_and_styles');
 
 register_nav_menu('header', 'Меню в "шапке"');
+register_nav_menu('footer-service', 'Меню сервис в "подвале"');
 register_nav_menu('footer', 'Меню в "подвале"');
 register_nav_menu('privacy', 'Меню политики конфиденциальности');
 

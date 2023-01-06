@@ -69,7 +69,7 @@ body{
 .bg-menu-black>div nav ul > li > a{
     color: #fff !important;
 }
-.bg-menu-black .akin_menu ul .sub-menu li a {
+.bg-menu-black .akin_menu ul li ul li a {
     color: #272727 !important;
 }
 .bg-menu-black .dark-logo{
@@ -155,7 +155,7 @@ body{
 
 /* top menu */
 
-.akin_menu ul .sub-menu .sub-menu .sub-menu li, .akin_menu ul .sub-menu .sub-menu li, .defaultsearch, .em-top-quearys-area, .main_menu_div, .mini_shop_content a, .top-form-control, .transprent-menu.menu4, .tx_relative_m, .tx_top2_relative, .witrfm_area, .wrapper {
+.akin_menu ul lu ul li ul li ul li, .akin_menu ul li ul li ul li, .defaultsearch, .em-top-quearys-area, .main_menu_div, .mini_shop_content a, .top-form-control, .transprent-menu.menu4, .tx_relative_m, .tx_top2_relative, .witrfm_area, .wrapper {
     position: relative;
 }
 /*.col-lg-d-none, .em-s-hidden, .mean-container a.meanmenu-reveal, .mobile-menu, .mobile_logo_area {*/
@@ -254,7 +254,7 @@ a {
     font-size: 19px;
     font-weight: 500;
 }
-.akin_menu ul .sub-menu {
+.akin_menu ul li ul {
     position: absolute;
     left: 0;
     top: 130%;
@@ -268,12 +268,12 @@ a {
     visibility: hidden;
     background: #fff;
 }
-.akin_menu ul .sub-menu li {
+.akin_menu ul li ul li {
     position: relative;
     -webkit-transition: .5s;
     transition: .5s;
 }
-.akin_menu ul .sub-menu li a {
+.akin_menu ul li ul li a {
     display: block;
     margin: 0;
     letter-spacing: normal;
@@ -285,19 +285,19 @@ a {
     visibility: inherit!important;
     color: #272727;
 }
-.akin_menu ul .sub-menu .sub-menu {
+.akin_menu ul li ul li ul {
     left: 100%;
     top: 130%;
     opacity: 0;
     visibility: hidden;
 }
-.akin_menu ul .sub-menu .sub-menu .sub-menu li, .akin_menu ul .sub-menu .sub-menu li, .defaultsearch, .em-top-quearys-area, .main_menu_div, .mini_shop_content a, .top-form-control, .transprent-menu.menu4, .tx_relative_m, .tx_top2_relative, .witrfm_area, .wrapper {
+.akin_menu ul li ul li ul lu ul li, .akin_menu ul li ul li ul li, .defaultsearch, .em-top-quearys-area, .main_menu_div, .mini_shop_content a, .top-form-control, .transprent-menu.menu4, .tx_relative_m, .tx_top2_relative, .witrfm_area, .wrapper {
     position: relative;
 }
 .akin_menu>ul>li.current>a, .akin_menu>ul>li:hover>a, .creative_header_menu>ul>li:hover>a {
     color: #000;
 }
-.akin_menu ul .sub-menu li:before {
+.akin_menu ul li ul li:before {
     opacity: 0;
     -webkit-transition: .1s;
     transition: .1s;
@@ -330,10 +330,10 @@ a {
     top: 100%;
     z-index: 9;
 }
-.akin_menu ul .sub-menu li:hover, .post_comment .post_comment {
+.akin_menu ul li ul li:hover, .post_comment .post_comment {
     margin-left: 15px;
 }
-.akin-single-blog:hover .akin-blog-thumb a:before, .akin_menu ul .sub-menu li:hover:before, .akin_menu>ul>li.current>a, .akin_menu>ul>li.current>a:before, .akin_menu>ul>li:hover>a, .akin_menu>ul>li:hover>a:before, .slick-slider:hover .slick-next, .slick-slider:hover .slick-prev {
+.akin-single-blog:hover .akin-blog-thumb a:before, .akin_menu ul li ul li:hover:before, .akin_menu>ul>li.current>a, .akin_menu>ul>li.current>a:before, .akin_menu>ul>li:hover>a, .akin_menu>ul>li:hover>a:before, .slick-slider:hover .slick-next, .slick-slider:hover .slick-prev {
     opacity: 1;
 }
 .akin_nav_area, .trp_nav_area, .transprent-menu .akin_nav_area {
@@ -1871,9 +1871,15 @@ position: relative;
 /* blog page */
 .blogcar_id2 .all_blog_color{
     padding: 30px 20px;
+    min-height: 220px;
 }
 .blogcar_id2 .all_blog_color h2{
     margin-bottom: 10px;
+}
+.all_blog_color .witr_blog_con{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .all_blog_color .learn_more_adn .learn_btn{
     border-style: solid;
@@ -1911,6 +1917,10 @@ position: relative;
     font-weight: 500;
     border: 2px solid #fff;
     padding: 18px 35px;
+    min-width: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .cta a:hover{
     color: #000;
@@ -2012,6 +2022,16 @@ position: relative;
 }
 .contacts a{
     color: #000;
+}
+.map-block{
+    position: relative;
+    height: 400px;
+}
+.map-block > ymaps{
+    height:100%;
+}
+.map-block  ymaps.ymaps-2-1-79-ground-pane{
+    filter: grayscale(1);
 }
 /* contacts end */
 
@@ -2708,3 +2728,29 @@ display: none!important;
     }
 }
 /* popups end */
+
+/*footer */
+/*.akin-description-area .social-icons a{*/
+/*    background: unset !important;*/
+/*}*/
+.akin-description-area .social-icons a img {
+    margin: 0;
+}
+footer .widget_nav_menu h2{
+    color:#fff;
+}
+footer .widget_nav_menu ul li a, footer p, footer a, footer i {
+    color:#696969 !important;
+}
+footer .about-footer .footer_s_inner img, footer .about-footer .footer_s_inner picture {
+    max-width: 25px;
+    max-height: 25px;
+    object-fit: contain;
+}
+
+footer .widget_nav_menu ul li a:hover{
+    color:#fff !important;
+}
+footer #about_us-widget-2 h2{
+    color:#fff;
+}

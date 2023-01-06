@@ -29,7 +29,9 @@ $header_btn_link = get_field('top_menu_btn_link', 'option');
                                 <span> <i class="icofont-home"></i> <?= $header_contacts['address_head'] ?> </span>
                                 <a href="tel:"> <i class="icofont-ui-call"></i><?= $header_contacts['phone'] ?> </a>
                                 <a href="mailto:demo@example.com">
-                                    <i class="icofont-envelope"></i><?= $header_contacts['email'] ?></a>
+                                    <i class="icofont-envelope"></i>
+                                    <?= $header_contacts['email'] ?>
+                                </a>
                             </p>
                         </div>
                     </div>
@@ -296,126 +298,110 @@ $header_btn_link = get_field('top_menu_btn_link', 'option');
                                             <div class="col-md-9 col-sm-9 col-xs-8">
                                                 <div class="tx_mmenu_together">
                                                     <nav class="akin_menu nologo_menu13">
-                                                        <ul id="menu-main-menu-1">
-                                                            <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-3657">
-                                                                <a href="#">Home</a>
-                                                                <ul class="sub-menu">
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-7281 current_page_item menu-item-7283">
-                                                                        <a href="https://demo.themexbd.com/rtl/akin/"
-                                                                           aria-current="page">Home Page</a></li>
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7877">
-                                                                        <a href="https://demo.themexbd.com/rtl/akin/home-black-page/">Home
-                                                                            Black Page</a></li>
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7475">
-                                                                        <a href="https://demo.themexbd.com/rtl/akin/home-minimal-page/">Home
-                                                                            Minimal Page</a></li>
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6751">
-                                                                        <a href="https://demo.themexbd.com/rtl/akin/home-minimal-black/">Home
-                                                                            Minimal Black</a></li>
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6508">
-                                                                        <a href="https://demo.themexbd.com/rtl/akin/home-studio-page/">Home
-                                                                            Studio Page</a></li>
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6798">
-                                                                        <a href="https://demo.themexbd.com/rtl/akin/home-studio-black/">Home
-                                                                            Studio Black</a></li>
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6511">
-                                                                        <a href="https://demo.themexbd.com/rtl/akin/home-project-gallery/">Home
-                                                                            Project Gallery</a></li>
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6797">
-                                                                        <a href="https://demo.themexbd.com/rtl/akin/home-project-black/">Home
-                                                                            Project Black</a></li>
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7482">
-                                                                        <a href="https://demo.themexbd.com/rtl/akin/home-side-menu-page/">Home
-                                                                            Side Menu Page</a></li>
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7105">
-                                                                        <a href="https://demo.themexbd.com/rtl/akin/home-architecture-firm/">Home
-                                                                            Architecture Firm</a></li>
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7411">
-                                                                        <a href="https://demo.themexbd.com/rtl/akin/home-architecture-black/">Home
-                                                                            Architecture Black</a></li>
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7571">
-                                                                        <a href="https://demo.themexbd.com/rtl/akin/home-portfolio-showcase/">Home
-                                                                            Portfolio showcase</a></li>
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7707">
-                                                                        <a href="https://demo.themexbd.com/rtl/akin/home-portfolio-black/">Home
-                                                                            Portfolio Black</a></li>
-                                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7857">
-                                                                        <a href="#">Landing Page</a>
-                                                                        <ul class="sub-menu">
-                                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7823">
-                                                                                <a href="https://demo.themexbd.com/rtl/akin/landing-one-page/">Landing
-                                                                                    One Page</a></li>
-                                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7841">
-                                                                                <a href="https://demo.themexbd.com/rtl/akin/landing-two-page/">Landing
-                                                                                    Two Page</a></li>
-                                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7850">
-                                                                                <a href="https://demo.themexbd.com/rtl/akin/landing-page-three/">Landing
-                                                                                    Page Three</a></li>
-                                                                        </ul>
-                                                                    </li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-400">
-                                                                <a href="https://demo.themexbd.com/rtl/akin/about/">About</a>
-                                                            </li>
-                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1901">
-                                                                <a href="https://demo.themexbd.com/rtl/akin/service/">Service</a>
-                                                            </li>
-                                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1803">
-                                                                <a href="#">Elements</a>
-                                                                <ul class="sub-menu">
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3502">
-                                                                        <a href="https://demo.themexbd.com/rtl/akin/team/">Team</a>
-                                                                    </li>
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-519">
-                                                                        <a href="https://demo.themexbd.com/rtl/akin/testimonial/">Testimonial</a>
-                                                                    </li>
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-503">
-                                                                        <a href="https://demo.themexbd.com/rtl/akin/faq/">Faq</a>
-                                                                    </li>
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11298">
-                                                                        <a href="https://demo.themexbd.com/rtl/akin/shop/">Shop</a>
-                                                                    </li>
-                                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3563">
-                                                                        <a href="#">Portfolio</a>
-                                                                        <ul class="sub-menu">
-                                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-604">
-                                                                                <a href="https://demo.themexbd.com/rtl/akin/portfolio-grid/">Portfolio
-                                                                                    Grid</a></li>
-                                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3557">
-                                                                                <a href="https://demo.themexbd.com/rtl/akin/portfolio-3column/">Portfolio
-                                                                                    3Column</a></li>
-                                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3558">
-                                                                                <a href="https://demo.themexbd.com/rtl/akin/portfolio-4column/">Portfolio
-                                                                                    4Column</a></li>
-                                                                        </ul>
-                                                                    </li>
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4950">
-                                                                        <a href="https://demo.themexbd.com/rtl/akin/pricing-table/">Pricing
-                                                                            Table</a></li>
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-411">
-                                                                        <a href="https://demo.themexbd.com/rtl/akin/single-service/">Single
-                                                                            Service</a></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3410">
-                                                                <a href="#">Blog</a>
-                                                                <ul class="sub-menu">
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-426">
-                                                                        <a href="https://demo.themexbd.com/rtl/akin/blog/">Blog
-                                                                            Gird</a></li>
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3409">
-                                                                        <a href="https://demo.themexbd.com/rtl/akin/blog-left-sidebar/">Blog
-                                                                            Left Sidebar</a></li>
-                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-450">
-                                                                        <a href="https://demo.themexbd.com/rtl/akin/blog-right-sidebar/">Blog
-                                                                            Right Sidebar</a></li>
-                                                                </ul>
-                                                            </li>
-                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-421">
-                                                                <a href="https://demo.themexbd.com/rtl/akin/contact/">Contact</a>
-                                                            </li>
-                                                        </ul>
+                                                        <?php
+                                                        wp_nav_menu(array(
+                                                            'theme_location'    => 'header',
+                                                            'depth'             => 3,
+                                                            'container'         => false,
+                                                            'menu_id'           => 'menu-main-menu-1',
+                                                            'fallback_cb'       => 'WP_Bootstrap_Navwalker',
+                                                            'walker'            => new WP_Bootstrap_Navwalker(),
+                                                            'items_wrap' => '<ul class="%2$s" itemprop="about" itemscope itemtype="http://schema.org/ItemList">%3$s</ul>'
+                                                        ));
+                                                        ?>
+<!--                                                        <ul id="menu-main-menu-1">-->
+<!--                                                            <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-3657">-->
+<!--                                                                <a href="#">Home</a>-->
+<!--                                                                <ul class="sub-menu">-->
+<!--                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6508">-->
+<!--                                                                        <a href="https://demo.themexbd.com/rtl/akin/home-studio-page/">Home-->
+<!--                                                                            Studio Page</a></li>-->
+<!--                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7411">-->
+<!--                                                                        <a href="https://demo.themexbd.com/rtl/akin/home-architecture-black/">Home-->
+<!--                                                                            Architecture Black</a></li>-->
+<!--                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7571">-->
+<!--                                                                        <a href="https://demo.themexbd.com/rtl/akin/home-portfolio-showcase/">Home-->
+<!--                                                                            Portfolio showcase</a></li>-->
+<!--                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7707">-->
+<!--                                                                        <a href="https://demo.themexbd.com/rtl/akin/home-portfolio-black/">Home-->
+<!--                                                                            Portfolio Black</a></li>-->
+<!--                                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-7857">-->
+<!--                                                                        <a href="#">Landing Page</a>-->
+<!--                                                                        <ul class="sub-menu">-->
+<!--                                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7823">-->
+<!--                                                                                <a href="https://demo.themexbd.com/rtl/akin/landing-one-page/">Landing-->
+<!--                                                                                    One Page</a></li>-->
+<!--                                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7841">-->
+<!--                                                                                <a href="https://demo.themexbd.com/rtl/akin/landing-two-page/">Landing-->
+<!--                                                                                    Two Page</a></li>-->
+<!--                                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7850">-->
+<!--                                                                                <a href="https://demo.themexbd.com/rtl/akin/landing-page-three/">Landing-->
+<!--                                                                                    Page Three</a></li>-->
+<!--                                                                        </ul>-->
+<!--                                                                    </li>-->
+<!--                                                                </ul>-->
+<!--                                                            </li>-->
+<!--                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-400">-->
+<!--                                                                <a href="https://demo.themexbd.com/rtl/akin/about/">About</a>-->
+<!--                                                            </li>-->
+<!--                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1901">-->
+<!--                                                                <a href="https://demo.themexbd.com/rtl/akin/service/">Service</a>-->
+<!--                                                            </li>-->
+<!--                                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1803">-->
+<!--                                                                <a href="#">Elements</a>-->
+<!--                                                                <ul class="sub-menu">-->
+<!--                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3502">-->
+<!--                                                                        <a href="https://demo.themexbd.com/rtl/akin/team/">Team</a>-->
+<!--                                                                    </li>-->
+<!--                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-519">-->
+<!--                                                                        <a href="https://demo.themexbd.com/rtl/akin/testimonial/">Testimonial</a>-->
+<!--                                                                    </li>-->
+<!--                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-503">-->
+<!--                                                                        <a href="https://demo.themexbd.com/rtl/akin/faq/">Faq</a>-->
+<!--                                                                    </li>-->
+<!--                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11298">-->
+<!--                                                                        <a href="https://demo.themexbd.com/rtl/akin/shop/">Shop</a>-->
+<!--                                                                    </li>-->
+<!--                                                                    <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3563">-->
+<!--                                                                        <a href="#">Portfolio</a>-->
+<!--                                                                        <ul class="sub-menu">-->
+<!--                                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-604">-->
+<!--                                                                                <a href="https://demo.themexbd.com/rtl/akin/portfolio-grid/">Portfolio-->
+<!--                                                                                    Grid</a></li>-->
+<!--                                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3557">-->
+<!--                                                                                <a href="https://demo.themexbd.com/rtl/akin/portfolio-3column/">Portfolio-->
+<!--                                                                                    3Column</a></li>-->
+<!--                                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3558">-->
+<!--                                                                                <a href="https://demo.themexbd.com/rtl/akin/portfolio-4column/">Portfolio-->
+<!--                                                                                    4Column</a></li>-->
+<!--                                                                        </ul>-->
+<!--                                                                    </li>-->
+<!--                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4950">-->
+<!--                                                                        <a href="https://demo.themexbd.com/rtl/akin/pricing-table/">Pricing-->
+<!--                                                                            Table</a></li>-->
+<!--                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-411">-->
+<!--                                                                        <a href="https://demo.themexbd.com/rtl/akin/single-service/">Single-->
+<!--                                                                            Service</a></li>-->
+<!--                                                                </ul>-->
+<!--                                                            </li>-->
+<!--                                                            <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-3410">-->
+<!--                                                                <a href="#">Blog</a>-->
+<!--                                                                <ul class="sub-menu">-->
+<!--                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-426">-->
+<!--                                                                        <a href="https://demo.themexbd.com/rtl/akin/blog/">Blog-->
+<!--                                                                            Gird</a></li>-->
+<!--                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3409">-->
+<!--                                                                        <a href="https://demo.themexbd.com/rtl/akin/blog-left-sidebar/">Blog-->
+<!--                                                                            Left Sidebar</a></li>-->
+<!--                                                                    <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-450">-->
+<!--                                                                        <a href="https://demo.themexbd.com/rtl/akin/blog-right-sidebar/">Blog-->
+<!--                                                                            Right Sidebar</a></li>-->
+<!--                                                                </ul>-->
+<!--                                                            </li>-->
+<!--                                                            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-421">-->
+<!--                                                                <a href="https://demo.themexbd.com/rtl/akin/contact/">Contact</a>-->
+<!--                                                            </li>-->
+<!--                                                        </ul>-->
                                                     </nav>
                                                     <div class="menu_popup_option">
                                                         <div class="right_popupmenu_area">

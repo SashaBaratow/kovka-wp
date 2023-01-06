@@ -3,6 +3,7 @@ get_header();
 
 $post_id = get_the_ID();
 $post_type = get_post_type( $post_id );
+global $post;
 if (have_posts()) :
 	while (have_posts()) :
 		the_post();
@@ -67,6 +68,9 @@ if (have_posts()) :
                                 </div>
                             </div>
                         </div>
+    <?php endwhile;
+endif;
+?>
                         <section class="blog-page">
                             <div class="container">
                                 <div class="info d-flex flex-column justify-content-center align-items-center">
@@ -75,12 +79,26 @@ if (have_posts()) :
                                 </div>
                                 <div class="witr_blog_area13">
                                     <div class="blog_wrap blogcar_id2  slick-slider">
-                                        <div class="witr_all_mb_30 col-md-12 col-xs-12 col-sm-12 slick-slide" data-slick-index="0" aria-hidden="true" style="width: 367px;" tabindex="-1">
+                                        <?php
+                                        // параметры по умолчанию
+                                        $my_posts = get_posts(array(
+                                            'numberposts' => 4,
+                                            'orderby' => 'date',
+                                            'order' => 'DESC',
+                                            'exclude'     => array($post->ID),
+                                            'post_type' => 'post',
+                                            'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
+                                        ));
+
+
+                                        foreach ($my_posts as $post) {
+                                            setup_postdata($post); ?>
+                                            <div class="witr_all_mb_30 col-md-12 col-xs-12 col-sm-12 slick-slide" data-slick-index="0" aria-hidden="true" style="width: 367px;" tabindex="-1">
                                             <div  class="post-1265 post type-post status-publish format-standard has-post-thumbnail hentry category-developer">
                                                 <div class="busi_singleBlog">
                                                     <div class="witr_sb_thumb">
-                                                        <a href="#" tabindex="-1">
-                                                            <img loading="lazy" width="390" height="350" src="img/bl11jpg.jpg" class="attachment-akin-blog-default size-akin-blog-default wp-post-image"   alt="" decoding="async">
+                                                        <a href="<?= the_permalink(); ?>" tabindex="-1">
+                                                            <img loading="lazy" width="390" height="350" src="<?= the_post_thumbnail_url();?>" class="attachment-akin-blog-default size-akin-blog-default wp-post-image"   alt="" decoding="async">
                                                         </a>
                                                         <div class="witr_top_category">
                                                         </div>
@@ -88,139 +106,26 @@ if (have_posts()) :
                                                     <div class="all_blog_color">
                                                         <div class="witr_blog_con bs5">
                                                             <h2>
-                                                                <a href="#" tabindex="-1">
-                                                                    Business With Remote Us Unity – Building
+                                                                <a href="<?= the_permalink(); ?>" tabindex="-1">
+                                                                    <?= the_title(); ?>
                                                                 </a>
                                                             </h2>
                                                             <p>
-                                                                Lorem ipsum dolor sit amet,
-                                                                consectetur adipisicing elit, sed do
+                                                                <?= the_excerpt(); ?>
                                                             </p>
                                                             <div class="learn_more_adn">
-                                                                <a class="learn_btn adnbtn2" href="#" tabindex="-1">Read More</a>
+                                                                <a class="learn_btn adnbtn2" href="<?= the_permalink(); ?>" tabindex="-1">Подробнее </a>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="witr_all_mb_30 col-md-12 col-xs-12 col-sm-12 slick-slide" data-slick-index="0" aria-hidden="true" style="width: 367px;" tabindex="-1">
-                                            <div  class="post-1265 post type-post status-publish format-standard has-post-thumbnail hentry category-developer">
-                                                <div class="busi_singleBlog">
-                                                    <div class="witr_sb_thumb">
-                                                        <a href="#" tabindex="-1">
-                                                            <img loading="lazy" width="390" height="350" src="img/bl11jpg.jpg" class="attachment-akin-blog-default size-akin-blog-default wp-post-image"   alt="" decoding="async">
-                                                        </a>
-                                                        <div class="witr_top_category">
-                                                        </div>
-                                                    </div>
-                                                    <div class="all_blog_color">
-                                                        <div class="witr_blog_con bs5">
-                                                            <h2>
-                                                                <a href="#" tabindex="-1">
-                                                                    Business With Remote Us Unity – Building
-                                                                </a>
-                                                            </h2>
-                                                            <p>
-                                                                Lorem ipsum dolor sit amet,
-                                                                consectetur adipisicing elit, sed do
-                                                            </p>
-                                                            <div class="learn_more_adn">
-                                                                <a class="learn_btn adnbtn2" href="#" tabindex="-1">Read More</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <?php }
+                                        wp_reset_postdata(); // сброс
+                                        ?>
+
                                         </div>
-                                        <div class="witr_all_mb_30 col-md-12 col-xs-12 col-sm-12 slick-slide" data-slick-index="0" aria-hidden="true" style="width: 367px;" tabindex="-1">
-                                            <div  class="post-1265 post type-post status-publish format-standard has-post-thumbnail hentry category-developer">
-                                                <div class="busi_singleBlog">
-                                                    <div class="witr_sb_thumb">
-                                                        <a href="#" tabindex="-1">
-                                                            <img loading="lazy" width="390" height="350" src="img/bl11jpg.jpg" class="attachment-akin-blog-default size-akin-blog-default wp-post-image"   alt="" decoding="async">
-                                                        </a>
-                                                        <div class="witr_top_category">
-                                                        </div>
-                                                    </div>
-                                                    <div class="all_blog_color">
-                                                        <div class="witr_blog_con bs5">
-                                                            <h2>
-                                                                <a href="#" tabindex="-1">
-                                                                    Business With Remote Us Unity – Building
-                                                                </a>
-                                                            </h2>
-                                                            <p>
-                                                                Lorem ipsum dolor sit amet,
-                                                                consectetur adipisicing elit, sed do
-                                                            </p>
-                                                            <div class="learn_more_adn">
-                                                                <a class="learn_btn adnbtn2" href="#" tabindex="-1">Read More</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="witr_all_mb_30 col-md-12 col-xs-12 col-sm-12 slick-slide" data-slick-index="0" aria-hidden="true" style="width: 367px;" tabindex="-1">
-                                            <div  class="post-1265 post type-post status-publish format-standard has-post-thumbnail hentry category-developer">
-                                                <div class="busi_singleBlog">
-                                                    <div class="witr_sb_thumb">
-                                                        <a href="#" tabindex="-1">
-                                                            <img loading="lazy" width="390" height="350" src="img/bl11jpg.jpg" class="attachment-akin-blog-default size-akin-blog-default wp-post-image"   alt="" decoding="async">
-                                                        </a>
-                                                        <div class="witr_top_category">
-                                                        </div>
-                                                    </div>
-                                                    <div class="all_blog_color">
-                                                        <div class="witr_blog_con bs5">
-                                                            <h2>
-                                                                <a href="#" tabindex="-1">
-                                                                    Business With Remote Us Unity – Building
-                                                                </a>
-                                                            </h2>
-                                                            <p>
-                                                                Lorem ipsum dolor sit amet,
-                                                                consectetur adipisicing elit, sed do
-                                                            </p>
-                                                            <div class="learn_more_adn">
-                                                                <a class="learn_btn adnbtn2" href="#" tabindex="-1">Read More</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="witr_all_mb_30 col-md-12 col-xs-12 col-sm-12 slick-slide" data-slick-index="0" aria-hidden="true" style="width: 367px;" tabindex="-1">
-                                            <div  class="post-1265 post type-post status-publish format-standard has-post-thumbnail hentry category-developer">
-                                                <div class="busi_singleBlog">
-                                                    <div class="witr_sb_thumb">
-                                                        <a href="#" tabindex="-1">
-                                                            <img loading="lazy" width="390" height="350" src="img/bl11jpg.jpg" class="attachment-akin-blog-default size-akin-blog-default wp-post-image"   alt="" decoding="async">
-                                                        </a>
-                                                        <div class="witr_top_category">
-                                                        </div>
-                                                    </div>
-                                                    <div class="all_blog_color">
-                                                        <div class="witr_blog_con bs5">
-                                                            <h2>
-                                                                <a href="#" tabindex="-1">
-                                                                    Business With Remote Us Unity – Building
-                                                                </a>
-                                                            </h2>
-                                                            <p>
-                                                                Lorem ipsum dolor sit amet,
-                                                                consectetur adipisicing elit, sed do
-                                                            </p>
-                                                            <div class="learn_more_adn">
-                                                                <a class="learn_btn adnbtn2" href="#" tabindex="-1">Read More</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </section>
@@ -228,9 +133,7 @@ if (have_posts()) :
                 </div>
             </div>
         </section>
-	<?php endwhile;
-endif;
-?>
+
 
 <?php
 

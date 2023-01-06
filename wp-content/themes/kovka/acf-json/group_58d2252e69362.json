@@ -24,7 +24,7 @@
                 "recall": "CTA обратный звонок",
                 "benefits": "Преимущества",
                 "cases": "Кейсы",
-                "contact_form": "Контакты с формой",
+                "contact_form": "CTA (Обратная связь)",
                 "map": "Карта",
                 "faq": "faq",
                 "infograp": "Инфографика",
@@ -73,7 +73,7 @@
                     {
                         "field": "field_58d2254e667ca",
                         "operator": "!=",
-                        "value": ""
+                        "value": "recall"
                     }
                 ]
             ],
@@ -152,6 +152,13 @@
                         "operator": "==",
                         "value": "partners"
                     }
+                ],
+                [
+                    {
+                        "field": "field_58d2254e667ca",
+                        "operator": "==",
+                        "value": "contact_form"
+                    }
                 ]
             ],
             "wrapper": {
@@ -206,125 +213,6 @@
             "step": "",
             "prepend": "",
             "append": ""
-        },
-        {
-            "key": "field_632c493739c58",
-            "label": "Ссылка",
-            "name": "cns_link_faq",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_58d2254e667ca",
-                        "operator": "==",
-                        "value": "FAQ"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "100",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 1,
-            "layout": "table",
-            "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_632c493739c59",
-                    "label": "Название Кнопки",
-                    "name": "case_btn_name_cns",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "Оставить заявку",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_632c493739c5a",
-                    "label": "Тип Кнопки",
-                    "name": "case_btn_type_cns",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "colored": "Залитая",
-                        "bordered": "С обводкой",
-                        "link": "Ссылка"
-                    },
-                    "default_value": [],
-                    "allow_null": 1,
-                    "multiple": 0,
-                    "ui": 1,
-                    "ajax": 1,
-                    "return_format": "value",
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_632c493739c5b",
-                    "label": "Цвет кнопки",
-                    "name": "case_btn_color_cns",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "red": "Красный",
-                        "blue": "Голубой",
-                        "dark_blue": "Темно синий"
-                    },
-                    "default_value": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 1,
-                    "ajax": 1,
-                    "return_format": "value",
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_632c493739c5c",
-                    "label": "ссылка",
-                    "name": "case_btn_link_cns",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "#",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                }
-            ]
         },
         {
             "key": "field_63ad6845abd4c",
@@ -1904,149 +1792,6 @@
                     "new_lines": "br"
                 },
                 {
-                    "key": "field_632c4252f5afb",
-                    "label": "Кнопка в вопросе",
-                    "name": "faq_btn_yes_no",
-                    "type": "true_false",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "20",
-                        "class": "",
-                        "id": ""
-                    },
-                    "message": "",
-                    "default_value": 0,
-                    "ui": 1,
-                    "ui_on_text": "",
-                    "ui_off_text": ""
-                },
-                {
-                    "key": "field_632c428ef5afc",
-                    "label": "Кнопка в FAQ",
-                    "name": "cns_btns_faq",
-                    "type": "repeater",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_58d2254e667ca",
-                                "operator": "==",
-                                "value": "FAQ"
-                            },
-                            {
-                                "field": "field_632c4252f5afb",
-                                "operator": "==",
-                                "value": "1"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "100",
-                        "class": "",
-                        "id": ""
-                    },
-                    "collapsed": "",
-                    "min": 0,
-                    "max": 1,
-                    "layout": "table",
-                    "button_label": "",
-                    "sub_fields": [
-                        {
-                            "key": "field_632c428ef5afd",
-                            "label": "Название Кнопки",
-                            "name": "case_btn_name_cns",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "Оставить заявку",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_632c428ef5afe",
-                            "label": "Тип Кнопки",
-                            "name": "case_btn_type_cns",
-                            "type": "select",
-                            "instructions": "",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "colored": "Залитая",
-                                "bordered": "С обводкой",
-                                "link": "Ссылка"
-                            },
-                            "default_value": [],
-                            "allow_null": 1,
-                            "multiple": 0,
-                            "ui": 1,
-                            "ajax": 1,
-                            "return_format": "value",
-                            "placeholder": ""
-                        },
-                        {
-                            "key": "field_632c428ef5aff",
-                            "label": "Цвет кнопки",
-                            "name": "case_btn_color_cns",
-                            "type": "select",
-                            "instructions": "",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "red": "Красная",
-                                "blue": "Голубой",
-                                "dark_blue": "Темно синий"
-                            },
-                            "default_value": [],
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 1,
-                            "ajax": 1,
-                            "return_format": "value",
-                            "placeholder": ""
-                        },
-                        {
-                            "key": "field_632c428ef5b00",
-                            "label": "ссылка",
-                            "name": "case_btn_link_cns",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "#",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        }
-                    ]
-                },
-                {
                     "key": "field_5e01ca3ec9e0a",
                     "label": "Ответ",
                     "name": "faq_answer",
@@ -2368,129 +2113,6 @@
             "layout": "horizontal",
             "return_format": "value",
             "save_other_choice": 0
-        },
-        {
-            "key": "field_632c44cb19291",
-            "label": "FAQ показать \/ убрать боковой блок",
-            "name": "faq_show_hide_side_block",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_58d2254e667ca",
-                        "operator": "==",
-                        "value": "FAQ"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_632c47fe9c3f7",
-            "label": "FAQ Иллюстрация блока",
-            "name": "faq_block_illustration_cns",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_58d2254e667ca",
-                        "operator": "==",
-                        "value": "FAQ"
-                    },
-                    {
-                        "field": "field_632c44cb19291",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_632c475d0a61e",
-            "label": "FAQ Заголовок блока",
-            "name": "faq_block_title_cns",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_58d2254e667ca",
-                        "operator": "==",
-                        "value": "FAQ"
-                    },
-                    {
-                        "field": "field_632c44cb19291",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_632c47810a61f",
-            "label": "FAQ Текст блока",
-            "name": "faq_block_text_cns",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_632c44cb19291",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "br"
         },
         {
             "key": "field_5ab9fe0a502e9",
@@ -2907,264 +2529,6 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
-        },
-        {
-            "key": "field_632c2881829ae",
-            "label": "Расположение иллюстрации",
-            "name": "recall_form_img_position",
-            "type": "radio",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_58d2254e667ca",
-                        "operator": "==",
-                        "value": "recall"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "left": "слева",
-                "right": "справа"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "default_value": "",
-            "layout": "vertical",
-            "return_format": "value",
-            "save_other_choice": 0
-        },
-        {
-            "key": "field_632c24fb8b80b",
-            "label": "Тип формы",
-            "name": "recall_form_type",
-            "type": "radio",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_58d2254e667ca",
-                        "operator": "==",
-                        "value": "recall"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "question": "с вопросом",
-                "no_question": "без вопроса"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "default_value": "",
-            "layout": "vertical",
-            "return_format": "value",
-            "save_other_choice": 0
-        },
-        {
-            "key": "field_632c266267fbf",
-            "label": "фон формы",
-            "name": "recall_form_bg",
-            "type": "radio",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_58d2254e667ca",
-                        "operator": "==",
-                        "value": "recall"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "white": "белый",
-                "blue": "синий",
-                "black": "черный"
-            },
-            "allow_null": 0,
-            "other_choice": 0,
-            "default_value": "",
-            "layout": "vertical",
-            "return_format": "value",
-            "save_other_choice": 0
-        },
-        {
-            "key": "field_632c31225ec45",
-            "label": "Кнопка в форме",
-            "name": "cns_btns_form_color",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_58d2254e667ca",
-                        "operator": "==",
-                        "value": "recall"
-                    }
-                ],
-                [
-                    {
-                        "field": "field_58d2254e667ca",
-                        "operator": "==",
-                        "value": "steps"
-                    },
-                    {
-                        "field": "field_632da0d7e5aa1",
-                        "operator": "==",
-                        "value": "vertical"
-                    }
-                ],
-                [
-                    {
-                        "field": "field_58d2254e667ca",
-                        "operator": "==",
-                        "value": ""
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "100",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 1,
-            "layout": "table",
-            "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_632c31225ec46",
-                    "label": "Название Кнопки",
-                    "name": "case_btn_name_cns",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "Оставить заявку",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_632c31225ec47",
-                    "label": "Тип Кнопки",
-                    "name": "case_btn_type_cns",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 1,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "colored": "Залитая",
-                        "bordered": "С обводкой",
-                        "link": "Ссылка"
-                    },
-                    "default_value": [],
-                    "allow_null": 1,
-                    "multiple": 0,
-                    "ui": 1,
-                    "ajax": 1,
-                    "return_format": "value",
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_632c31225ec48",
-                    "label": "Цвет кнопки",
-                    "name": "case_btn_color_cns",
-                    "type": "select",
-                    "instructions": "",
-                    "required": 1,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_58d2254e667ca",
-                                "operator": "==",
-                                "value": "recall"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_58d2254e667ca",
-                                "operator": "==",
-                                "value": "steps"
-                            },
-                            {
-                                "field": "field_632da0d7e5aa1",
-                                "operator": "==",
-                                "value": "vertical"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_58d2254e667ca",
-                                "operator": "==",
-                                "value": "text"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_58d2254e667ca",
-                                "operator": "==",
-                                "value": "benefits"
-                            }
-                        ],
-                        [
-                            {
-                                "field": "field_58d2254e667ca",
-                                "operator": "==",
-                                "value": "FAQ"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "red": "Красный",
-                        "blue": "Голубой",
-                        "dark_blue": "Темно синий",
-                        "white": "Белый"
-                    },
-                    "default_value": [],
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 1,
-                    "ajax": 1,
-                    "return_format": "value",
-                    "placeholder": ""
-                }
-            ]
         },
         {
             "key": "field_5c9b153f314f8",
@@ -4443,6 +3807,13 @@
                         "operator": "==",
                         "value": "1"
                     }
+                ],
+                [
+                    {
+                        "field": "field_58d2254e667ca",
+                        "operator": "==",
+                        "value": "recall"
+                    }
                 ]
             ],
             "wrapper": {
@@ -4474,6 +3845,13 @@
                         "field": "field_63ad5461a95b3",
                         "operator": "==",
                         "value": "1"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_58d2254e667ca",
+                        "operator": "==",
+                        "value": "recall"
                     }
                 ]
             ],
@@ -4839,227 +4217,6 @@
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
-                },
-                {
-                    "key": "field_6331835c500bd",
-                    "label": "Элементы",
-                    "name": "map_elements",
-                    "type": "repeater",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "collapsed": "",
-                    "min": 0,
-                    "max": 0,
-                    "layout": "table",
-                    "button_label": "",
-                    "sub_fields": [
-                        {
-                            "key": "field_633183a3500be",
-                            "label": "иконка",
-                            "name": "map_icon",
-                            "type": "image",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "url",
-                            "preview_size": "medium",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
-                        },
-                        {
-                            "key": "field_633183c0500bf",
-                            "label": "текст",
-                            "name": "map_text",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_637c70b54fe61",
-                            "label": "ссылка",
-                            "name": "map_link",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        }
-                    ]
-                },
-                {
-                    "key": "field_633183e5500c0",
-                    "label": "Текст над кнопкой",
-                    "name": "text_over_map_btn",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_6331840d500c1",
-                    "label": "Кнопки на на карте",
-                    "name": "cns_btns_map",
-                    "type": "repeater",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_58d2254e667ca",
-                                "operator": "==",
-                                "value": "map"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "100",
-                        "class": "",
-                        "id": ""
-                    },
-                    "collapsed": "",
-                    "min": 0,
-                    "max": 1,
-                    "layout": "table",
-                    "button_label": "",
-                    "sub_fields": [
-                        {
-                            "key": "field_6331840e500c2",
-                            "label": "Название Кнопки",
-                            "name": "case_btn_name_cns",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "Оставить заявку",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_6331840e500c3",
-                            "label": "Тип Кнопки",
-                            "name": "case_btn_type_cns",
-                            "type": "select",
-                            "instructions": "",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "colored": "Залитая",
-                                "bordered": "С обводкой",
-                                "link": "Ссылка"
-                            },
-                            "default_value": [],
-                            "allow_null": 1,
-                            "multiple": 0,
-                            "ui": 1,
-                            "ajax": 1,
-                            "return_format": "value",
-                            "placeholder": ""
-                        },
-                        {
-                            "key": "field_6331840e500c4",
-                            "label": "Цвет кнопки",
-                            "name": "case_btn_color_cns",
-                            "type": "select",
-                            "instructions": "",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "red": "Красная",
-                                "blue": "Голубой",
-                                "dark_blue": "Темно синий"
-                            },
-                            "default_value": [],
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 1,
-                            "ajax": 1,
-                            "return_format": "value",
-                            "placeholder": ""
-                        },
-                        {
-                            "key": "field_6331840e500c5",
-                            "label": "ссылка",
-                            "name": "case_btn_link_cns",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 1,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "#",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        }
-                    ]
                 }
             ]
         },
@@ -5317,78 +4474,6 @@
             "prepend": "",
             "append": "в % или px",
             "maxlength": ""
-        },
-        {
-            "key": "field_6010fd29f168c",
-            "label": "Контакты с формой",
-            "name": "contact_form",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_58d2254e667ca",
-                        "operator": "==",
-                        "value": "contact_form"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_617319727c599",
-                    "label": "Иконка",
-                    "name": "contact_form_icon",
-                    "type": "image",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "20",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "preview_size": "thumbnail",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_617319a37c59a",
-                    "label": "Содержимое",
-                    "name": "contact_form_text",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "80",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": "br"
-                }
-            ]
         },
         {
             "key": "field_5c92161880ed0",
@@ -6721,5 +5806,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1672917006
+    "modified": 1673000471
 }
