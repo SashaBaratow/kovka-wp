@@ -1,9 +1,7 @@
 <?php
 
 $block_title = trim($post_info_block_fields["infoblock_title"]);
-$block_title_underline = trim($post_info_block_fields["infoblock_title_underline"]);
-$block_posts = $post_info_block_fields["infoblock_lastposts_add"];
-$posts_id = [];
+$block_subtitle = trim($post_info_block_fields["infoblock_subtitle"]);
 
 
 $block_padding_top = (int)$post_info_block_fields["infoblock_padding_margin"]["infoblock_padding_top"];
@@ -19,74 +17,52 @@ $padding_bottom = $block_padding_bottom / 16;
 $margin_top = $block_margin_top / 16;
 $margin_bottom = $block_margin_bottom / 16;
 
-foreach ($block_posts as $post) {
-    $posts_id[] = $post->ID;
-}
 ?>
-<style>
-    <?php if(empty($block_posts)){ ?>
-        #<?=$block_id;?>{
-            display: none !important;
-        }
-   <?php } ?>
-</style>
-
-
-<section class="news last-news" id="<?=$block_id;?>">
-    <style>
-        #<?=$block_id;?> {
-            padding-top:<?= $padding_top?>rem;
-            padding-bottom:<?= $padding_bottom?>rem;
-            margin-top: <?= $margin_top?>rem;
-            margin-bottom:<?= $margin_bottom;?>rem;
-        }
-        #<?=$block_id;?> .news__list {
-            display: flex;
-            margin: 0 -0.56rem;
-            flex-wrap: wrap;
-        }
-        #<?=$block_id;?> .news__list a{
-            margin-bottom: 30px;
-        }
-    </style>
+<section class="block" id="<?=$block_id;?>" >
     <div class="container">
-        <div class="section-head">
-            <h2 class="section-title top-line" <?= $block_title_underline ? "style='text-decoration: underline;'" : '' ?> ><?= $block_title ?></h2>
+        <div class="info d-flex flex-column justify-content-center align-items-center">
+            <span class="subtitle"> <?= $block_subtitle ?> </span>
+            <h3 class="main-title mb-0"> <?= $block_title ?> </h3>
         </div>
-        <div class="news__list">
+        <div class="blog_wrap blogcar_id1  slick-slider">
             <?php
             // параметры по умолчанию
             $my_posts = get_posts(array(
-                'numberposts' => 3,
+                'numberposts' => 10,
                 'orderby' => 'date',
-                'order' => 'ACS',
+                'order' => 'DESC',
                 'post_type' => 'post',
                 'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса
             ));
-//            the_date('d-m-Y');
             global $post;
 
             foreach ($my_posts as $post) {
-                setup_postdata($post); ?>
-<!--                    --><?php //var_dump($post);?>
-                <a href="<?= the_permalink();?>" class="news__item ">
-                    <div class="news__head">
-                        <img src="<?= get_the_post_thumbnail_url( $post->ID, 'full' );?>" alt="<?= the_title()?>" title="Читать: <?= the_title()?>">
-                        <h3 class="news__title"><?= the_title()?></h3>
+            setup_postdata($post); ?>
+                <div class="witr_all_mb_30 col-md-12 col-xs-12 col-sm-12 slick-slide" data-slick-index="0" aria-hidden="true" style="width: 374px;" tabindex="-1">
+                <div class="post-1265 post type-post status-publish format-standard has-post-thumbnail hentry category-developer">
+                    <div class="busi_singleBlog">
+                        <div class="witr_sb_thumb">
+                            <a href="<?= the_permalink(); ?>" tabindex="-1">
+                                <img width="390" height="350" src="<?= the_post_thumbnail_url();?>" class="attachment-akin-blog-default size-akin-blog-default wp-post-image" alt="" decoding="async" loading="lazy">
+                            </a>
+                            <div class="witr_top_category">
+                            </div>
+                        </div>
+                        <div class="all_blog_color">
+                            <div class="witr_blog_con bs5">
+                                <h2>
+                                    <a href="<?= the_permalink(); ?>" tabindex="-1">
+                                        <?= the_title(); ?>
+                                    </a>
+                                </h2>
+                                <p> <?= the_excerpt(); ?> </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="news__info">
-                        <div class="news__data"> <?php the_time('d/m/Y') ?> </div>
-                        <?php $category = get_the_category( $post->ID );
-                            foreach ($category as $cat){ ?>
-                                <div class="news__cat"><?= $cat->name?></div>
-                            <?php }
-                        ?>
-                    </div>
-                    <p><?= the_excerpt()?></p>
-                    <span class="btn dark-btn text-btn dark-text">Читать</span>
-                </a>
+                </div>
+            </div>
             <?php }
-            wp_reset_postdata(); // сброс
+                wp_reset_postdata(); // сброс
             ?>
         </div>
     </div>

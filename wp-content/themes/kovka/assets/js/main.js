@@ -110,17 +110,19 @@ $('.revSlider').slick({
             }
         },
         {
-            breakpoint: 600,
+            breakpoint: 768,
             settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
+                slidesToShow: 1,
+                slidesToScroll: 2,
+                dots: true
             }
         },
         {
             breakpoint: 480,
             settings: {
                 slidesToShow: 1,
-                slidesToScroll: 1
+                slidesToScroll: 1,
+                dots: true
             }
         }
     ]
@@ -131,7 +133,11 @@ $('.revSlider').slick({
 var swiperPart = new Swiper(".partSwiper", {
     slidesPerView: 4,
     spaceBetween: 30,
+    loop: true,
     freeMode: true,
+    autoplay: {
+        delay: 1000,
+    },
 });
 
 // catalog

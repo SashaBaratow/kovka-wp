@@ -145,6 +145,13 @@
                         "operator": "==",
                         "value": "text"
                     }
+                ],
+                [
+                    {
+                        "field": "field_58d2254e667ca",
+                        "operator": "==",
+                        "value": "partners"
+                    }
                 ]
             ],
             "wrapper": {
@@ -3845,33 +3852,6 @@
             "return_format": "id"
         },
         {
-            "key": "field_633bee5d03980",
-            "label": "Добавить 3 последние новости ?",
-            "name": "infoblock_lastposts_add",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_58d2254e667ca",
-                        "operator": "==",
-                        "value": "last_posts"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 1,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_63305f7de0fab",
             "label": "Тариф",
             "name": "infoblock_tariffs",
@@ -4347,7 +4327,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "33",
+                        "width": "50",
                         "class": "",
                         "id": ""
                     },
@@ -4361,6 +4341,25 @@
                     "max_height": "",
                     "max_size": "",
                     "mime_types": ""
+                },
+                {
+                    "key": "field_63b693c80d852",
+                    "label": "ссылка",
+                    "name": "infoblock_partners_link",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "#",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         },
@@ -4733,6 +4732,33 @@
             "min": "",
             "max": "",
             "return_format": "id"
+        },
+        {
+            "key": "field_63b6723a60710",
+            "label": "текст",
+            "name": "infoblock_review_text",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_58d2254e667ca",
+                        "operator": "==",
+                        "value": "reviews"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         },
         {
             "key": "field_60110b708a549",
@@ -6695,5 +6721,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1672811333
+    "modified": 1672917006
 }
