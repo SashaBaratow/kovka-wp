@@ -510,4 +510,136 @@ counters.forEach((counter) => {
 
 // number inc end
 
+//data-fancybox="gallery" .data('fancybox', 'gallery')
+// single product fancy
+// $('.woocommerce-product-gallery__wrapper > div > a').attr('data-fancybox', 'gallery');
+
+    "use strict"; // Start of use strict
+
+
+    let wprappGallery = $(".woocommerce-product-gallery__wrapper");
+    let images = wprappGallery.children();
+    let imagesThumb = [];
+    let imagesFor = [];
+    let imageHtml = "";
+
+    images.each(function () {
+        imagesThumb.push($(this).data("thumb"));
+        imagesFor.push($(this).children("a").attr("href"));
+    });
+
+    imageHtml += '<div class="slider-for">';
+    imagesFor.forEach(function (item, i) {
+        imageHtml += '<div class="slider-item">';
+        imageHtml +=
+            '<a data-fancybox="gallery" href="' +
+            (item ?
+                item :
+                "https://zip.re/wp-content/uploads/woocommerce-placeholder-600x600.png") +
+            '">';
+        imageHtml +=
+            '<img src="' +
+            (item ?
+                item :
+                "https://zip.re/wp-content/uploads/woocommerce-placeholder-600x600.png") +
+            '"/>';
+        imageHtml += "</a>";
+        imageHtml += "</div>";
+    });
+    imageHtml += "</div>";
+    //for
+
+    //Nav Slide
+    if (!imagesThumb.includes(undefined)) {
+        imageHtml += '<div class="slider-nav">';
+        imagesThumb.forEach(function (item, i) {
+            imageHtml += '<div class="slider-item-nav">';
+            // imageHtml += '<a data-fancybox="gallery" href="'+imagesFor[i]+'">';
+            imageHtml +=
+                '<img src="' +
+                (item ?
+                    item :
+                    "https://zip.re/wp-content/uploads/woocommerce-placeholder-600x600.png") +
+                '"/>';
+            // imageHtml += '</a>';
+            imageHtml += "</div>";
+        });
+        imageHtml += "</div>";
+    }
+    //nav
+
+    wprappGallery.html(imageHtml);
+    let productSlider = $('.product-block-slider');
+    let dataProductSlider = productSlider.data("pr-slider");
+    if (productSlider.hasClass("slider-active")) {
+        $(`#${dataProductSlider} .products`).slick({
+            slidesToShow: 4,
+            dots: false,
+            centerMode: false,
+            focusOnSelect: true,
+            infinite: false,
+            responsive: [{
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                },
+            },],
+        });
+    }
+
+
+    $(".slider-for").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: ".slider-nav",
+    });
+
+    let slickNav = $(".slider-nav").slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: ".slider-for",
+        dots: false,
+        centerMode: false,
+        focusOnSelect: true,
+        infinite: false,
+    });
+
+    if (imagesThumb.length < 4) {
+        $(".slick-track", slickNav).css("marginLeft", "0");
+    }
+
+// single product fancy end
+
+// slingle product variations
+
+
+
+$(document).on('change', '.variation-radios input', function() {
+    $('.variation-radios input:checked').each(function(index, element) {
+        var $el = $(element);
+        var thisName = $el.attr('name');
+        var thisVal  = $el.attr('value');
+        $('select[name="'+thisName+'"]').val(thisVal).trigger('change');
+    });
+});
+$(document).on('woocommerce_update_variation_values', function() {
+    $('.variation-radios input').each(function(index, element) {
+        var $el = $(element);
+        var thisName = $el.attr('name');
+        var thisVal  = $el.attr('value');
+        $el.removeAttr('disabled');
+        if($('select[name="'+thisName+'"] option[value="'+thisVal+'"]').is(':disabled')) {
+            $el.prop('disabled', true);
+        }
+    });
+});
+
+
+
+
+// slingle product variations end
+
 

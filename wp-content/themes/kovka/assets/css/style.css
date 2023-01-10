@@ -2754,3 +2754,58 @@ footer .widget_nav_menu ul li a:hover{
 footer #about_us-widget-2 h2{
     color:#fff;
 }
+
+.product.has-default-attributes.has-children > .images{opacity:1;}
+.woocommerce-product-gallery {opacity: 1 !important;}
+.product-title{
+    position: relative;
+    padding-left: 35px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    /*padding-left: 17px;*/
+}
+.product-title span{
+    width: 50%;
+    /*transform: translate(100%, 0);*/
+}
+.variations select{
+    display: none !important;
+}
+.variation-radios{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.variation-radios label{
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    margin-right: 20px;
+}
+.variation-radios input{
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    margin-right: 0 !important;
+}
+.variations tbody tr th label{
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+}
+.variations tbody tr th.label {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 120px;
+}
+.variations tbody tr {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
