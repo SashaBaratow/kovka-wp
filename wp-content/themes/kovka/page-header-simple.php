@@ -20,10 +20,6 @@ global $post;
                     </div>
                     <div class="breadcumb-inner">
                         <?= theme_breadcrumbs(); ?>
-<!--                        <ul>Вы сейчас здесь!<i class="icofont-thin-right"></i>-->
-<!--                            <li><a href="/" rel="v:url" property="v:title">Home</a>-->
-<!--                            </li>-->
-<!--                            <i class="icofont-thin-right"></i><span class="current">About</span></ul>-->
                     </div>
                 </div>
             </div>

@@ -1,8 +1,9 @@
 <?php
 get_header();
 ?>
+
 <?php
- include('page-header-simple.php');
+ get_template_part('page-header-simple');
 if (have_posts()):
     while (have_posts()) :
         the_post();
@@ -25,15 +26,6 @@ if (have_posts()):
                 </div>
             </div>
         </section>
-
-        <?php
-        //Построение инфо-блоков на странице...
-        //Предустановленные блоки
-        $post_info_blocks = [
-            ['infoblock_add_type' => 'select', 'infoblock_item_object' => 0],	//ID БЛОКА
-        ];
-        include(locate_template('info_blocks/init.php'));
-        ?>
     <?php
     endwhile;
 endif;
@@ -104,6 +96,14 @@ endif;
             </div>
         </div>
     </div>
+<?php
+//Построение инфо-блоков на странице...
+//Предустановленные блоки
+$post_info_blocks = [
+    ['infoblock_add_type' => 'select', 'infoblock_item_object' => 0],	//ID БЛОКА
+];
+include(locate_template('info_blocks/init.php'));
+?>
 <?php
 get_footer();
 ?>
