@@ -473,7 +473,7 @@ function theme_breadcrumbs()
     // Set variables for later use
     $home_url = home_url('/');
     $home_text = 'Главная';
-    $delimiter = ' <span class="breadcrumb-divider">/</span> ';              // Delimiter between crumbs
+    $delimiter = ' <span class="breadcrumb-divider"> > </span> ';              // Delimiter between crumbs
     $before = '<span itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="breadcrumb-current"><span itemprop="name">'; // Tag before the current crumb
     $after = '</span><meta itemprop="position" content="%last%" /></span>';                // Tag after the current crumb
     $page_addon = ''; // Adds the page number if the query is paged
@@ -1403,3 +1403,16 @@ function variation_check($active, $variation) {
 add_filter('woocommerce_variation_is_active', 'variation_check', 10, 2);
 
 // variations end
+
+
+//wishlist btn
+add_action('woocommerce_before_add_to_cart_button', 'show_wishlist');
+function show_wishlist(){
+   echo do_shortcode('[yith_wcwl_add_to_wishlist]');
+}
+//wishlist btn end
+
+/**
+ * Remove related products output
+ */
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
