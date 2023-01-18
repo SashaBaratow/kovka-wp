@@ -1,9 +1,10 @@
 
-$(document).ready(function(){
+$(document).ready(function() {
     $(".button").click(function(){
         var name = $(this).attr('data-filter');
         if(name == "all"){
             $(".shot-thumbnail").show('2000');
+            $(".shot-thumbnail").css('trans');
         }else{
             $(".shot-thumbnail").not("."+name).hide('2000');
             $(".shot-thumbnail").filter("."+name).show('2000');
@@ -642,4 +643,10 @@ $(document).on('woocommerce_update_variation_values', function() {
 
 // slingle product variations end
 
+$('.mean-container .mean-nav ul li a i').on('click', function (e){
+    e.preventDefault();
+   let currentSubmenu =  $(this).parent().parent().children('ul');
+    $(currentSubmenu).toggleClass('active');
+    // console.log($(this).parent().parent().find('ul'));
+});
 

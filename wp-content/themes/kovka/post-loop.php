@@ -1,4 +1,5 @@
 <?php
+wp_die();
 global $wp_query;
 // Category
 $cat = get_queried_object();

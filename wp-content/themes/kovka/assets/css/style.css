@@ -81,6 +81,53 @@ body{
 .mean-expand{
     position: relative;
 }
+.mean-container .mean-nav ul li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 96%;
+    position: relative;
+}
+.mean-container .mean-nav ul li a i{
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 20px;
+    z-index: 20;
+    height: 100%;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mean-container .mean-nav ul li ul{
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    height: 0 !important;
+    transition: all .5s;
+}
+.mean-container .mean-nav ul li ul li{
+    height: 0;
+    transition: all .5s;
+}
+.mean-container .mean-nav ul li ul.active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+    transition: all .5s;
+}
+.mean-container .mean-nav ul li ul.active > li{
+    height: auto;
+    transition: all .5s;
+}
+.mean-container .mean-nav ul li ul li a {
+    display: none;
+}
+.mean-container .mean-nav ul li ul.active li a {
+    display: block;
+}
 .mean-container .mean-nav ul li a.mean-expand{
     top: 14px;
 }
@@ -254,10 +301,21 @@ a {
     font-size: 19px;
     font-weight: 500;
 }
+.akin_menu .menu > li:hover > ul{
+  opacity: 1;
+    visibility: visible;
+    transition: .5s;
+}
+.akin_menu .menu > li > ul > li:hover ul{
+    opacity: 1;
+    visibility: visible;
+    transition: .5s;
+}
+
 .akin_menu ul li ul {
     position: absolute;
     left: 0;
-    top: 130%;
+    top: 86%;
     width: 270px;
     text-align: left;
     margin: 0;
@@ -267,6 +325,7 @@ a {
     opacity: 0;
     visibility: hidden;
     background: #fff;
+    transition: .5s;
 }
 .akin_menu ul li ul li {
     position: relative;
@@ -287,9 +346,12 @@ a {
 }
 .akin_menu ul li ul li ul {
     left: 100%;
-    top: 130%;
+    top: 85%;
     opacity: 0;
     visibility: hidden;
+}
+.akin_menu ul li a i{
+    display: none !important;
 }
 .akin_menu ul li ul li ul lu ul li, .akin_menu ul li ul li ul li, .defaultsearch, .em-top-quearys-area, .main_menu_div, .mini_shop_content a, .top-form-control, .transprent-menu.menu4, .tx_relative_m, .tx_top2_relative, .witrfm_area, .wrapper {
     position: relative;

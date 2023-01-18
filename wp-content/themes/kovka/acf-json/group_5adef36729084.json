@@ -108,6 +108,33 @@
             "mime_types": ""
         },
         {
+            "key": "field_63c68df48f19b",
+            "label": "Текст снизу",
+            "name": "page_header_text_cns_down",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ae38f69c8621",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 3,
+            "new_lines": "br"
+        },
+        {
             "key": "field_63ac25272d47c",
             "label": "Текст кнопки",
             "name": "header_btn_text",
@@ -184,5 +211,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1672227488
+    "modified": 1673956883
 }
