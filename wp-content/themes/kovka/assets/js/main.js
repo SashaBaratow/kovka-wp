@@ -34,11 +34,18 @@ $('.mobile_menu_o i.icofont-close').on('click', function () {
 
 // scroll menu hide/show
 let menu = jQuery('.akin-main-menu')
+let cart = jQuery('.wc-block-mini-cart__quantity-badge')
+let cartMin = jQuery('.cart-min')
 jQuery(window).scroll(function (){
-    if (jQuery(window).scrollTop() > 80){
+    if (jQuery(window).scrollTop() > 40) {
         menu.addClass('bg-menu-black')
-    }else {
+        cart.addClass('bg-cart-white')
+        cartMin.addClass('white-color')
+    } else {
         menu.removeClass('bg-menu-black')
+        cart.removeClass('bg-cart-white')
+        cartMin.removeClass('white-color')
+
     }
 })
 

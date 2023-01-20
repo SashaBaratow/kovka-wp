@@ -70,18 +70,16 @@ foreach ($block_list as $list) {
         opacity: 1 !important;
     }
 </style>
-
 <section class="review" id="<?= $block_id; ?>">
     <div class="container-fluid">
         <div class="row">
-
             <div class="col-12">
                 <div class="left ">
                     <div class="info" style="text-align: left;">
                         <span class="subtitle text-left"><?= $block_subtitle ?></span>
                         <h3><?= !empty($block_title) ? $block_title : '' ?></h3>
                         <hr>
-                        <p><?= $infoblock_review_text ?></p>
+                        <p> <?= $infoblock_review_text ?> </p>
                     </div>
                 </div>
                 <!-- Swiper -->

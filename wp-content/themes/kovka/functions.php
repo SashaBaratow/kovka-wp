@@ -1416,3 +1416,20 @@ function show_wishlist(){
  * Remove related products output
  */
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+
+function twenty_twenty_one_widgets_init() {
+
+    register_sidebar(
+        array(
+            'name'          => esc_html__( 'Footer', 'twentytwentyone' ),
+            'id'            => 'sidebar-1',
+            'description'   => esc_html__( 'Add widgets here to appear in your footer.', 'twentytwentyone' ),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h2 class="widget-title">',
+            'after_title'   => '</h2>',
+        )
+    );
+}
+add_action( 'widgets_init', 'twenty_twenty_one_widgets_init' );

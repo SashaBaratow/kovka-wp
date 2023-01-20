@@ -307,6 +307,13 @@ $header_btn_link = get_field('top_menu_btn_link', 'option');
                                             </div>
                                             <div class="col-md-9 col-sm-9 col-xs-8">
                                                 <div class="tx_mmenu_together">
+                                                    <?php
+                                                        if ( is_active_sidebar( 'sidebar-1' ) ) : ?>                                                        <aside class="widget-area">
+                                                                <?php dynamic_sidebar( 'sidebar-1' ); ?>
+                                                            </aside><!-- .widget-area -->
+                                                        <?php
+                                                        endif;
+                                                    ?>
                                                     <nav class="akin_menu nologo_menu13">
                                                         <?php
                                                         wp_nav_menu(array(
@@ -320,6 +327,7 @@ $header_btn_link = get_field('top_menu_btn_link', 'option');
                                                         ));
 //                                                        ?>
                                                     </nav>
+                                                    
                                                     <div class="menu_popup_option">
                                                         <div class="right_popupmenu_area">
                                                             <div class="right_side_icon">
@@ -380,6 +388,16 @@ $header_btn_link = get_field('top_menu_btn_link', 'option');
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cart-min">
+<!--                                                        --><?php //echo wc_get_cart_url(); ?>
+                                                        <a class="mini-cart " href="#" title="<?php _e( 'Показать корзину.' ); ?>">
+                                                            <span class="mini-cart__products-qty"><?=WC()->cart->get_cart_contents_count();?> товара - <?php echo WC()->cart->get_cart_total(); ?></span>
+                                                            <span class="wc-block-mini-cart__quantity-badge"></span>
+                                                        </a>
+                                                        <div class="cart-content">
+
                                                         </div>
                                                     </div>
                                                     <div class="donate-btn-header">
