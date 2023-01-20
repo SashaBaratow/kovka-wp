@@ -1406,7 +1406,7 @@ add_filter('woocommerce_variation_is_active', 'variation_check', 10, 2);
 
 
 //wishlist btn
-add_action('woocommerce_before_add_to_cart_button', 'show_wishlist');
+//add_action('woocommerce_before_add_to_cart_button', 'show_wishlist');
 function show_wishlist(){
    echo do_shortcode('[yith_wcwl_add_to_wishlist]');
 }
