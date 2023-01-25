@@ -41,10 +41,14 @@ jQuery(window).scroll(function (){
         menu.addClass('bg-menu-black')
         cart.addClass('bg-cart-white')
         cartMin.addClass('white-color')
+        jQuery('.wc-block-mini-cart__amount').css('color', '#fff');
+        jQuery('.pr-count').css('color', '#fff');
     } else {
         menu.removeClass('bg-menu-black')
         cart.removeClass('bg-cart-white')
         cartMin.removeClass('white-color')
+        jQuery('.wc-block-mini-cart__amount').css('color', '#000');
+        jQuery('.pr-count').css('color', '#000');
 
     }
 })
@@ -161,6 +165,26 @@ var swiper = new Swiper(".catalogSwiper", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
+    breakpoints: {
+        // when window width is >= 320px
+        320: {
+            slidesPerView: 1,
+        },
+        // when window width is >= 480px
+        480: {
+            slidesPerView: 2,
+        },
+        // when window width is >= 640px
+        640: {
+            slidesPerView: 2,
+        },
+        992: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 3,
+        },
+    }
 });
 var swiper = new Swiper(".blockSwiper", {
     slidesPerView: 3,

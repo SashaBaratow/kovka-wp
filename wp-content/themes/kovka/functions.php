@@ -28,6 +28,7 @@ function theme_dequeue_script()
 add_action('wp_print_scripts', 'theme_dequeue_script', 100);
 
 function theme_add_scripts_and_styles()
+
 {
     wp_deregister_script('jquery');
     wp_enqueue_script('theme-jquery', get_template_directory_uri() . '/assets/js/jquery-3.6.3.min.js', [], null);
@@ -1312,7 +1313,6 @@ class SchemaORGRegistry
 
 }
 
-;
 
 // доп настройка плагина AMP
 add_action('request', 'reset_permalinks');
@@ -1402,6 +1402,7 @@ function variation_check($active, $variation) {
 }
 add_filter('woocommerce_variation_is_active', 'variation_check', 10, 2);
 
+
 // variations end
 
 
@@ -1422,9 +1423,9 @@ function twenty_twenty_one_widgets_init() {
 
     register_sidebar(
         array(
-            'name'          => esc_html__( 'Footer', 'twentytwentyone' ),
+            'name'          => esc_html__( 'Header', 'kovka' ),
             'id'            => 'sidebar-1',
-            'description'   => esc_html__( 'Add widgets here to appear in your footer.', 'twentytwentyone' ),
+            'description'   => esc_html__( 'Add widgets here to appear in your footer.', 'kovka' ),
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
             'after_widget'  => '</section>',
             'before_title'  => '<h2 class="widget-title">',
@@ -1433,3 +1434,26 @@ function twenty_twenty_one_widgets_init() {
     );
 }
 add_action( 'widgets_init', 'twenty_twenty_one_widgets_init' );
+
+add_filter('gettext', 'translate_text');
+add_filter('ngettext', 'translate_text');
+
+function translate_text($translated) {
+    $translated = str_ireplace('Подытог', 'Сумма', $translated);
+    $translated = str_ireplace('Возможно Вас также заинтересует&hellip;', 'Вместе с этим товаром покупают', $translated);
+    return $translated;
+}
+
+// update cart page on change count
+
+add_action( 'wp_footer', 'bbloomer_cart_refresh_update_qty' );
+
+function bbloomer_cart_refresh_update_qty() {
+    if ( is_cart() || ( is_cart() && is_checkout() ) ) {
+        wc_enqueue_js( "
+         $('div.woocommerce').on('click', 'input.qty', function(){
+            $('[name=\'update_cart\']').trigger('click');
+         });
+      " );
+    }
+}

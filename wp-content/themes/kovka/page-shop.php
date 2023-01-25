@@ -74,8 +74,8 @@ $recommendet_products_arr = get_field("recommendet_products", 'option');
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6  col-sm-12 col-xs-12 sidebar-right content-widget pdsl">
+            <div class="row products-row">
+                <div class="col-lg-4 col-md-12  col-sm-12 col-xs-12 sidebar-right content-widget pdsl">
                     <div class="blog-left-side widget">
                         <div id="archives-1" class="widget widget_archive">
                             <h2 class="widget-title">Категории</h2>
@@ -119,10 +119,10 @@ $recommendet_products_arr = get_field("recommendet_products", 'option');
 
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-6 col-sm-12 col-xs-12">
+                <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
                     <div class="tab-content">
                         <div id="tx_product_grid" class="bgimgload  fade tab-pane active show">
-                            <div class=" row blog-messonary" style="position: relative; height: 812.218px;">
+                            <div class=" row blog-messonary" style="position: relative;">
                                 <?php
                                 $args = array(
                                     'orderby' => 'name',
